@@ -1,0 +1,10 @@
+.main {
+    @include center();
+
+    & a {
+        @include hover();
+
+        @include font(10vw,500,1,0, #11A0F8);
+        text-align: center;
+    }
+}

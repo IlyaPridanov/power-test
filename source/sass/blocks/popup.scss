@@ -1,0 +1,140 @@
+.popup {
+    position: fixed;
+    z-index: 50;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(61, 70, 77, 0.7);
+}
+
+.popup__close {
+    @include btn();
+
+    & svg {
+        fill: #90A4AE;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        cursor: pointer;
+
+        // opacity: 0.6;
+
+        & svg {
+            fill: #000000;
+        }
+    }
+}
+
+.popup__block {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width:300px;
+    max-width: 100%;
+
+    background-color: $white;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.popup__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 77px;
+    padding: 5px 20px;
+
+    border-bottom: 1px solid #DAE3EA;
+    background: rgba(218, 227, 234, 0.3);
+}
+
+.popup__caption {
+    @include font(14px,500,1,0,#3D464D);
+    text-transform: uppercase;
+}
+
+.popup__main {
+    display: flex;
+    padding: 19px 0 20px 0;
+    border-bottom: 1px solid #DAE3EA;
+}
+
+.popup__img {
+    flex: 0 0 auto;
+    padding: 0 24px;
+}
+
+.popup__column {
+    flex: 0 1 auto;
+    padding-right: 20px;
+}
+
+.popup__speach {
+    max-width: 100%;
+    margin-bottom: 10px;
+    @include font(14px,400,1.2,0,#2F363C);
+}
+
+.popup__text {
+    margin: 0;
+    @include font(14px,400,1.2,0,#7E939E);
+}
+
+.popup__footer {
+    padding: 5px 20px;
+    min-height: 71px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.popup__footer-btn {
+    @include btn();
+    @include center();
+    @include hover();
+    width: 50px;
+    min-height: 30px;
+
+    @include font(12px,500,1,0,#11A0F8);
+    border: 1px solid #11A0F8;
+    border-radius: 2px;
+
+    &:first-child {
+        border: none;
+    }
+}
+
+
+@media(min-width:$tablet-width) {
+    .popup__block {
+        width: 615px;
+    }
+
+    .popup__caption {
+        font-size: 18px;
+    }
+
+    .popup__speach,
+    .popup__text {
+        font-size: 16px;
+    }
+
+    .popup__img {
+        & svg {
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    .popup__footer-btn {
+        width: 60px;
+        min-height: 40px;
+
+        font-size: 16px;
+    }
+}
